@@ -23,7 +23,10 @@ const CustomMenu = ({ page, menuItemList }) => {
 						item === page &&
 						menuItemList[item].map(listItem => (
 							<NavLink
-								to={`/${item.toLowerCase().replace(" ", "")}/${listItem.toLowerCase().replace(" ", "")}`}
+								to={
+									process.env.PUBLIC_URL +
+									`/${item.toLowerCase().replace(" ", "")}/${listItem.toLowerCase().replace(" ", "")}`
+								}
 								style={{ color: "inherit", textDecoration: "none" }}
 							>
 								<MenuItem key={listItem} onClick={handleClose}>
